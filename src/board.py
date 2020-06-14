@@ -25,10 +25,19 @@ class Board:
         self.array[row][col] = self.currMove
         self.currMove+=1
 
-    def isValid(self,row,col) -> bool:
+    def is_valid(self,row,col) -> bool:
         """
             Used to check if proposed move / position is valid in the given board dimensions
         """
         if(row >=0 and col>=0 and row<self.row and col<self.col):
             return True
         return False
+
+    def get_row(self):
+        return self.row
+    
+    def get_col(self):
+        return self.get_col
+    
+    def get_currMove(self):
+        return self.currMove
