@@ -11,11 +11,12 @@ class Board:
         """
             print string representation of current board
         """
+        ans = ""
         for i in range(self.row):
             for j in range(self.col):
-                print(self.array[i][j],end = " ")
-            print()
-
+                ans+=str(self.array[i][j])+" "
+            ans+="\n"
+        return ans
 
     def make_move(self, row:int, col:int):
         """
@@ -25,9 +26,9 @@ class Board:
         self.currMove+=1
 
     def isValid(self,row,col) -> bool:
-    """
-    Used to check if proposed move / position is valid in the given board dimensions
-    """
-    if(row >=0 and col>=0 and row<self.row and col<self.col):
-        return True
-    return False
+        """
+            Used to check if proposed move / position is valid in the given board dimensions
+        """
+        if(row >=0 and col>=0 and row<self.row and col<self.col):
+            return True
+        return False
