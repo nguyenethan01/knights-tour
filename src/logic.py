@@ -26,7 +26,7 @@ def knights_tour_helper(board:board.Board,x_curr,y_curr,x_moves,y_moves,curr_mov
     """
 
     #if all moves have been completed, return list of moves
-    if(board.get_currMove() == board.get_col()*board.get_row()):
+    if(curr_move == board.get_col() * board.get_row()):
         return True
 
     #try all next moves
@@ -34,10 +34,10 @@ def knights_tour_helper(board:board.Board,x_curr,y_curr,x_moves,y_moves,curr_mov
         x_next = x_curr + x_moves[i]
         y_next = y_curr + y_moves[i]
         if(board.is_valid(x_next,y_next)):
-            board.make_move(x_next,y_next) = curr_move
+            board.make_move(x_next,y_next,curr_move)
             board.add_solution((x_next,y_next))
             if(knights_tour_helper(board,x_next,y_next,x_moves,y_moves,curr_move+1)):
                 return True
-            board.array[x_next][y_next] = -1
+            board.make_move(x_next,y_next,-1)
             board.solution.pop()
     return False

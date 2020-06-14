@@ -1,5 +1,9 @@
 import board
+import logic
 
-test = board.Board(10,10)
-test.make_move(5,3)
-print(test)
+
+
+
+if __name__ == "__main__"
+test = board.Board(8,8)
+logic.knights_tour(2,3,test)

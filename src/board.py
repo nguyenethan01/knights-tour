@@ -36,7 +36,7 @@ class Board:
         return self.row
     
     def get_col(self):
-        return self.get_col
+        return self.col
     
     def add_solution(self,x:tuple):
         self.solution.append(x)
